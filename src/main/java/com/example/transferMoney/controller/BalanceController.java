@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 
 @Slf4j
-@RestController("/balance")
 @AllArgsConstructor
+@RestController("/balance")
 public class BalanceController {
 
     private BankService bankService;
@@ -20,15 +20,15 @@ public class BalanceController {
         return bankService.getBalance(accountId);
     }
 
-    @PostMapping("/add")
-    public BigDecimal addMoney(@RequestBody TransferBalance transferBalance) {
-        return bankService.addMoney(transferBalance.getTo(), transferBalance.getAmount());
-    }
+//    @PostMapping("/add")
+//    public BigDecimal addMoney(@RequestBody TransferBalance transferBalance) {
+//        return bankService.addMoney(transferBalance.getTo(), transferBalance.getAmount());
+//    }
 
-    @PostMapping("/transfer") //balance account that take money
-    public void transfer(@RequestBody TransferBalance transferBalance) {
-        bankService.makeTransfer(transferBalance);
-    }
+//    @PostMapping("/transfer") //balance account that take money
+//    public void transfer(@RequestBody TransferBalance transferBalance) {
+//        bankService.makeTransfer(transferBalance);
+//    }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public String handle(IllegalArgumentException e) {

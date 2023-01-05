@@ -3,20 +3,14 @@ package com.example.transferMoney.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Data
 @Entity
-public class TransferBalance {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String name;
 
-    @OneToOne
-    private User from;
-    @OneToOne
-    private User to;
-
-    private BigDecimal amount;
-
+    @OneToOne(cascade = CascadeType.ALL)
+    private Balance balance;
 }

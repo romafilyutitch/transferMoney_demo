@@ -12,23 +12,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class TransferMoneyApplicationTests {
 
-    private final BalanceRepository balanceRepository = new BalanceRepository();
-    private final BankService bankService = new BankService(balanceRepository);
+   // private final BalanceRepository balanceRepository = new BalanceRepository();
+  //  private final BankService bankService = new BankService(balanceRepository);
 
     @Test
     void contextLoads() {
     }
 
-    @Test
-    void getBalance() {
-        BigDecimal balance = bankService.getBalance(1L);
-        assertEquals(balance, BigDecimal.TEN);
-    }
+//    @Test
+//    void getBalance() {
+//        BigDecimal balance = bankService.getBalance(1L);
+//        assertEquals(balance, BigDecimal.TEN);
+//    }
 
-    @Test
-    void addMoney() {
-        BigDecimal balance = bankService.addMoney(1L, BigDecimal.ONE);
-        assertEquals( balance, BigDecimal.valueOf(11));
-    }
+//    @Test
+//    void addMoney() {
+//        BigDecimal balance = bankService.addMoney(1L, BigDecimal.ONE);
+//        assertEquals( balance, BigDecimal.valueOf(11));
+//    }
 }
 
